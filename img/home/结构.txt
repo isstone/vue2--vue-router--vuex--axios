@@ -1,0 +1,4 @@
+home
+detail+id;
+list+id;
+detail

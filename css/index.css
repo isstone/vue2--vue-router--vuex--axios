@@ -1,0 +1,1325 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style:none;
+}
+body{
+	background:#F3F3F3;
+	position:relative;
+}
+.clearFix:after{
+	content:"";
+	clear:both;
+}
+
+a{
+	text-decoration:none;
+	color:#333;
+}
+
+/*定义首页头部的公共样式*/
+.search{
+	background:#ff6600;
+	height: 50px;
+	width: 100%;
+	color:#fff;
+
+}
+.search img{
+  display:block;
+  float:left;
+  width: 50px;
+  height: 25px;
+  margin-top:10px;
+  margin-left:10px;
+  margin-right:15px;
+  color:white;
+}
+
+.search input{
+	display:block;
+	width: 75%;
+	margin-top:10px;
+	float:left;
+	font-size:12px;
+	line-height: 30px;
+	border-radius:10px;
+	outline:none;
+	border:none;
+	color:white;
+	background:#FF8C3C;	
+}
+
+/*定义首页脚部的导航*//*
+*/
+
+.footer{
+	position:fixed;
+	width: 100%;
+	bottom:0px;
+	left:0px;
+	height: 48px;
+	background:#FFFFFF;
+
+}
+.footer li {
+   width: 25%;
+   float:left;
+   height: 100%;
+   
+}
+.footer li a{
+	display:block;
+
+}
+.footer li img{
+	display:block;
+	width: 30px;
+	height: 30px;
+	margin:0 auto;
+}
+
+.footer li a span{
+	display:block;
+	font-size:14px;
+	line-height: 18px;
+	text-align:center;
+}
+/*轮播图部分样式*/
+.home .header{
+	width: 100%;
+	/*overflow:hidden;*/
+}
+.home .header .carousel{
+	height: 160px;
+	width: 100%;
+	position:relative;
+	
+} 
+.home .header .carousel li {
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:0;
+}
+.home .header .carousel li a{
+	display:block;
+	height: 100%;
+	width: 100%;
+}
+.home .header .carousel li img{
+  	width:100%;	
+  	height: 100%;	
+}
+
+/*警告部分的样式*/
+.header div.warn{
+	width: 100%;
+	height: 30px;
+	padding:5px;
+	background:#fff;
+}
+.header .warn span.warn{
+	height: 20px;
+	display:block;
+	float:left;
+	margin-right:10px;
+	width: 30px;
+	border:1px solid #f60;
+	font-size:12px;
+	line-height: 20px;
+	color:red;
+	text-align:center;
+}
+.header .warn a{
+	height: 20px;
+	float:left;
+	display:block;
+	font-size:14px;
+	text-align:left;
+}
+/*导航部分的样式*/
+.header .nav{
+  height: 40px;
+  background:#fff;
+  padding:0px 0 10px;
+  margin-bottom:10px;
+}
+
+.header .nav li {
+	float:left;
+	height: 30px;
+	width: 25%;
+	text-align:center;
+}
+.header .nav li a{
+	display:block;
+	height: 30px;
+	width: 30px;
+	margin:0 auto;
+	text-align:center;
+}
+.header .nav li a img{
+	display:block;
+	height: 100%;
+	width: 100%;
+}
+.header .nav li p{
+	font-size:12px;
+	color:red;
+}
+.header .nav li:nth-child(2) p{
+	color:purple;
+}
+.header .nav li:nth-child(3) p{
+	color:#009ADC;
+}
+.header .nav li:nth-child(4) p{
+	color:#FF6600;
+}
+
+/*导航下面的几张图片样式*/
+.register li:nth-child(1){
+  height: 150px;
+  width: 100%;
+}
+.register li:nth-child(1) a{
+	display:block;
+	width: 100%;
+    height: 100%;
+}
+
+.register li:nth-child(1) a img{
+	width: 100%;
+	height: 100%;
+}
+.register li:nth-child(2),.register li:nth-child(3),.register li:nth-child(4){
+  width: 33.3%;
+  height: 100px;
+  float:left;
+}
+.register li:nth-child(2) a,.register li:nth-child(3) a,.register li:nth-child(4) a{
+  width: 100%;
+  height: 100%;
+  display:block;
+}
+.register li:nth-child(2) a img,.register li:nth-child(3) a img,.register li:nth-child(4) a img{
+	width:100%;
+	height: 100px;
+}
+.register li:nth-child(5),.register li:nth-child(6){
+	width: 50%;
+	height: 70px;
+	float:left;
+}
+.register li:nth-child(5) a,.register li:nth-child(6) a{
+	width: 100%;
+	height: 100%;
+	display:block;
+}
+.register li:nth-child(5) a img,.register li:nth-child(6) a img{
+	width: 100%;
+	height: 100%;
+}
+/*今日特卖部分的样式*/
+.fortoday{
+	margin-top:170px;
+}
+.fortoday p{
+	width: 100%;
+	height: 40px;
+	font-size:14px;
+     color:#333;
+     line-height: 40px;
+     text-align:center;
+}
+
+.fortoday ul li{
+	margin:5px;
+	width: 100%;
+	height: 180px;
+}
+.fortoday ul li a{
+	display:block;
+	width: 100%;
+	height: 100%;
+}
+.fortoday ul li a img{
+	height: 150px;
+	width: 100%;
+}
+.fortoday ul li a div{
+  height: 30px;
+  background:#fff;
+}
+.fortoday ul li a div p{
+	float:left;
+	height: 100%;
+	width: 70%;
+	line-height: 30px;
+	font-size:12px;
+	text-align:left;
+	text-indent:10px;
+}
+.fortoday ul li a div span{
+  height: 30px;
+  width: 30%;
+  display:block;
+  float:right;
+  color:#333;
+  font-size:12px;
+  color:red;
+  line-height: 30px;
+  text-align:center;
+}
+
+
+/*精选爆款部分样式*/
+.hotsales p{
+	width: 100%;
+	height: 40px;
+	text-align:center;
+	color:#333;
+	font-size:14px;
+	line-height: 40px;
+
+}
+
+.hotsales ul li{
+	margin:5px;
+	width: 100%;
+	height: 180px;
+}
+.hotsales ul li a{
+	display:block;
+	width: 100%;
+	height: 100%;
+}
+.hotsales ul li a img{
+	height: 150px;
+	width: 100%;
+}
+.hotsales ul li a div{
+  height: 30px;
+  background:#fff;
+}
+.hotsales ul li a div p{
+	float:left;
+	height: 100%;
+	width: 70%;
+	line-height: 30px;
+	font-size:12px;
+	text-align:left;
+	text-indent:10px;
+}
+.hotsales ul li a div span{
+  height: 30px;
+  width: 30%;
+  display:block;
+  float:right;
+  color:#333;
+  font-size:12px;
+  color:red;
+  line-height: 30px;
+  text-align:center;
+}
+/*今日特卖部分的样式*/
+
+.todaysales{
+	height:100%;
+	margin-bottom:50px;
+}
+.todaysales .title{
+   width: 100%;
+   height: 40px;
+   text-align:center;
+   color:#333;
+   line-height: 40px;
+}
+
+/*设置今日特卖的样式*/
+.todaysales ul{
+	height: 340px;
+	width: 100%;
+	margin-bottom:10px;
+}
+.todaysales ul a{
+	display:block;
+	width: 100%;
+	height: 340px;
+} 
+.todaysales ul a li{
+	float:left;
+	height: 280px;
+	border:1px solid #ccc;
+	box-sizing:border-box;
+}
+
+.todaysales ul a li img{
+	width: 100%;
+	height: 100%;
+}
+.todaysales ul a li:nth-of-type(1){
+  width: 60%;
+  height: 280px;
+  border-right:none;
+}
+.todaysales ul a li:nth-of-type(2),.todaysales ul a li:nth-of-type(3){
+	width: 40%;
+	height: 140px;
+}
+
+.todaysales ul a div.title{
+/*	margin-top:280px;*/
+    float:left;
+	background:white;
+	height: 40px;
+	width: 100%;
+} 
+.todaysales ul a div img{
+	margin-top:10px;
+	margin-left:10px;
+	display:block;
+	width: 40px;
+	height: 30px;
+	float:left;
+	margin-right:20px;
+}
+.todaysales ul a div p{
+	float:left;
+	font-size:12px;
+	line-height: 20px;
+	color:#000;
+
+}
+.todaysales ul a div p span{
+  height: 15px;
+  width: 15px;
+  color:red;
+}
+.todaysales ul a div div{
+	float:right;
+	margin-right:20px;
+	width: 60px;
+	height: 20px;
+	position:relative;
+}
+.todaysales ul a div div img{
+	width: 60px;
+	height: 20px;
+
+}
+.todaysales ul a div div span{
+	width: 100%;
+	height: 100%;
+	font-size:10px;
+	color:#fff;
+   position:absolute; 
+   left:8px;
+   top:0px;
+}
+
+
+/*购物车的样式*/
+.cart{
+	position:relative;
+}
+.cart .top{
+	width: 100%;
+	height: 50px;
+	background:#f60;
+}
+.cart .top a span{
+	display:block;
+	width: 40px;
+	height: 40px;
+	font-size:30px;
+	color:#fff;
+	line-height: 40px;
+	margin-left:20px;
+	margin-right:20px;
+	float:left;
+}
+
+.cart .top p.title{
+   width: 50%;
+   float:left;
+   color:#fff;
+   font-size:20px;
+   height: 100%;
+   text-align:center;
+   line-height: 50px;
+   font-family:"微软雅黑";
+}
+.cart .top p.set{
+   float:right;
+   color:#fff;
+   width: 40px;
+   height: 30px;
+   margin:5px;
+   margin-right:10px;
+   line-height: 30px;
+   border:1px solid #fff;
+   font-size:14px;
+   text-align:center;
+   box-sizing:border-box;
+   margin-top:11px;
+   border-radius:5px;
+}
+
+.cart div.buynothing img{
+	position:absolute;
+	top:200%;
+	left:50%;
+	margin-left:-15%;
+	width: 30%;
+	height: 80px;
+
+}
+
+.cart div.buynothing p.buy{
+	width: 100%;
+	position:absolute;
+	top:330%;
+	text-align:center;
+	height: 30px;
+	line-height: 30px;
+	color:#333;
+	font-size:14px;
+}
+
+.cart div.buynothing a.tip{
+	display:block;
+	width: 100%;
+	height: 30px;
+
+}
+.cart div.buynothing a div.tip{
+	width: 30%;
+	height: 30px;
+	position:absolute;
+	top:400%;
+	left:50%;
+	margin-left:-15%;
+	font-size:14px;
+	border:1px solid red;
+	border-radius:10px;
+	color:red;
+	line-height: 30px;
+	text-align:center;
+}
+
+/*当购物车加入商品后的样式*/
+.cart div.buylist div.up{
+	width: 100%;
+	height: 40px;
+	overflow:hidden;
+}
+.cart div.buylist div.up input{
+	background-color:#fff;
+	width: 20px;
+	height: 20px;
+	display:block;
+	color:red;
+	margin-left:20px;
+	float:left;
+	margin:10px;
+
+}
+.cart div.buylist div.up p{
+	float:left;
+	font-size:14px;
+	width: 70%;
+	height: 20px;
+	margin:10px;
+	margin-left:20px;
+	line-height: 20px;
+	text-align:left;
+}
+.cart div.buylist div.down{
+	height: 80px;
+	width: 100%;
+
+}
+.cart div.buylist div.down input{
+	width: 20px;
+	height: 20px;
+	margin:20px 10px 20px;
+	display:block;
+	float:left;
+
+}
+.cart div.buylist div.down a img{
+	height: 50px;
+	width: 40px;
+	display:block;
+	margin-right:10px;
+	float:left;
+}
+.cart div.buylist div.down div{
+	float:left;
+	height: 80px;
+	width: 70%;
+}
+.cart div.buylist div.down div a p{
+   width: 80%;
+   font-size:10px;
+   height: 40px;
+   float:left;
+
+}
+.cart div.buylist div.down div span.price{
+   float:left;
+   width: 20%;
+   font-size:14px;
+}
+.cart div.buylist div.down div div.number{
+	float:left;
+	width:80%;
+	height: 30px;
+}
+.cart div.buylist div.down div div.number span{
+	width: 15px;
+	height: 15px;
+	float:left;
+	border:1px solid #ccc;
+	font-size:12px;
+	text-align:center;
+	line-height: 15px;
+	margin-right:10px;
+	border-radius:50%;
+}
+.cart div.buylist div.allcount{
+  width: 100%;
+  height: 40px;
+  position:relative;
+
+}
+.cart div.buylist div.allcount span{
+   position:absolute;
+   right:80px;
+   width: 50px;
+   height: 30px;
+   font-size:12px;
+   line-height: 30px;
+   text-align:center;
+}
+.cart div.buylist div.allcount span.allprice{
+	right:30px;
+	color:red;
+}
+
+
+/*定义个人用户登录页面样式*/
+section.account{
+	height: 100%;
+	height: 100%;
+	background:#fff;
+	height: 550px;
+}
+.account div.title{
+	width: 100%;
+	height: 40px;
+	padding:20px;
+	position:relative;
+
+}
+.account div.title span{
+	position:absolute;
+	left:15px;
+	height: 40px;
+	width: 20px;
+	line-height: 40px;
+	text-align:center;
+	color:#f60;
+	font-size:30px;
+	top:9px;
+}
+.account div.title p.title{
+	width: 100%;
+	height: 40px;
+	color:#333;
+	text-align:center;
+	font-size:16px;
+	text-indent:-40px;
+}
+.account div.regist{
+	position:relative;
+}
+.account div.regist input{
+	width: 90%;
+	height: 40px;
+	display:block;
+	border:1px solid #f60;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	margin:10px;
+	text-align:center;
+	outline:none;
+
+}
+.account div.regist a{
+	display:block;
+	width: 40px;
+	height: 40px;
+}
+.account div.regist a span{
+  position:absolute;
+  right:20px;
+  width: 60px;
+  height: 20px;
+  line-height: 20px;
+  color:#f60;
+  text-align:center;
+  font-size:12px;
+  margin-top:10px;
+}
+.account div.regist input.button{
+	border:none;
+	background:#FEA060;
+	color:#fff;
+	text-align:center;
+	font-size:16px;
+	border-radius:20px;
+}
+
+.account div.regist a.newjion span,.account div.regist a.phonecheck span{
+	position:absolute;
+	width: 100px;
+	/*height: 30px;*/
+
+}
+.account div.regist a.newjion,.account div.regist a.phonecheck{
+	width: 100px;
+	height: 30px;
+}
+.account div.regist a.newjion span{
+	left:20px;
+}
+.account div.regist a.phonecheck span{
+	right:20px;
+	top:200px;
+}
+
+/*忘记密码部分的样式*/
+section.forgetPassword{
+	height: 100%;
+	height: 100%;
+	background:#fff;
+	height: 550px;
+}
+.forgetPassword div.reset{
+	width: 100%;
+	height: 40px;
+	padding:20px;
+	position:relative;
+
+}
+.forgetPassword div.reset span{
+	position:absolute;
+	left:10px;
+	height: 40px;
+	width: 20px;
+	line-height: 40px;
+	text-align:center;
+	color:#f60;
+	font-size:30px;
+	top:17px;
+}
+.forgetPassword div.reset p.title{
+	width: 100%;
+	height: 40px;
+	line-height: 35px;
+	color:#333;
+	text-align:center;
+	font-size:16px;
+	text-indent:-40px;
+}
+.forgetPassword input{
+	width: 90%;
+	height: 40px;
+	line-height: 40px;
+	display:block;
+	border:1px solid #f90;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	margin:10px;
+	text-align:center;
+	outline:none;
+}
+
+.forgetPassword input:nth-of-type(1){
+	margin-top:80px;
+}
+.forgetPassword input:nth-of-type(2){
+	border:none;
+	background:#fff;
+	color:#888;
+}
+
+/*新用户注册部分的样式*/
+section.newJoin{
+	height: 100%;
+	height: 100%;
+	background:#fff;
+	height: 550px;
+	position:relative;
+}
+.newJoin div{
+	width: 100%;
+	height: 40px;
+	padding:20px;
+	position:relative;
+
+}
+.newJoin div span{
+	position:absolute;
+	left:10px;
+	height: 40px;
+	width: 20px;
+	line-height: 40px;
+	text-align:center;
+	color:#f60;
+	font-size:30px;
+	top:17px;
+}
+.newJoin div p.title{
+	width: 100%;
+	height: 40px;
+	line-height: 35px;
+	color:#333;
+	text-align:center;
+	font-size:16px;
+	text-indent:-40px;
+}
+.newJoin input{
+	width: 90%;
+	height: 40px;
+	line-height: 40px;
+	display:block;
+	border:1px solid #f90;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	margin:10px;
+	text-align:center;
+	outline:none;
+}
+
+.newJoin input:nth-of-type(1){
+	margin-top:80px;
+}
+.newJoin input:nth-of-type(2){
+	border:none;
+	background:#fff;
+	color:#888;
+}
+.newJoin input:nth-of-type(3){
+	width: 14px;
+	height: 14px;
+	float:left;
+	margin-left:72px;
+
+}
+.newJoin span.agree{
+	font-size:14px;
+	color:#f60;
+	float:left;
+	position:absolute;
+	left:90px;
+	top:268px;
+
+}
+
+
+/*手机验证登录页面样式*/
+section.phoneCheck{
+	height: 100%;
+	height: 100%;
+	background:#fff;
+	height: 550px;
+}
+.phoneCheck div.check{
+	width: 100%;
+	height: 40px;
+	padding:20px;
+	position:relative;
+
+}
+.phoneCheck div.check span{
+	position:absolute;
+	left:10px;
+	height: 40px;
+	width: 20px;
+	line-height: 40px;
+	text-align:center;
+	color:#f60;
+	font-size:30px;
+	top:17px;
+}
+.phoneCheck div.check p.title{
+	width: 100%;
+	height: 40px;
+	line-height: 35px;
+	color:#333;
+	text-align:center;
+	font-size:16px;
+	text-indent:-40px;
+}
+.phoneCheck input{
+	width: 90%;
+	height: 40px;
+	line-height: 40px;
+	display:block;
+	border:1px solid #f90;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	margin:10px;
+	text-align:center;
+	outline:none;
+}
+
+.phoneCheck input:nth-of-type(1){
+	margin-top:80px;
+}
+.phoneCheck input:nth-of-type(2){
+	border:none;
+	background:#fff;
+	color:#888;
+}
+
+/*新妈专享部分的样式*/
+section.newsalery{
+	height: 100%;
+	height: 100%;
+	/*background:#fff;*/
+	/*height: 550px;*/
+}
+.newsalery div.header{
+	width: 100%;
+	height: 50px;
+	/*padding:20px;*/
+	position:relative;
+	background:#f60;
+
+}
+.newsalery div.header span{
+	position:absolute;
+	left:10px;
+	height: 50px;
+	width: 20px;
+	line-height: 50px;
+	text-align:center;
+	color:#fff;
+	font-size:30px;
+	
+}
+.newsalery div.header p.title{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	color:#fff;
+	text-align:center;
+	font-size:16px;
+	
+}
+.newsalery img.center1,.newsalery img.center2{
+	width: 100%;
+	height: 500px;
+	display:block;
+}
+.newsalery div.regist,.newsalery div.login{
+ float:left;
+ width: 50%;
+ height: 40px;
+ background:#fff;
+ text-align:center;
+ font-size:12px;
+ position:relative;
+}
+.newsalery div.regist img,.newsalery div.login img{
+	display:block;
+	position:absolute;
+	width: 30px;
+	height: 30px;
+
+}
+.newsalery div.regist img{
+	left:50%;
+	margin-left:0px;
+}
+.newsalery div.login img{
+	right:50%;
+	margin-right:-25px;
+}
+.newsalery div.regist span,.newsalery div.login span{
+	position:absolute;
+	bottom:0;
+}
+
+/*奶粉模块样式模块*/
+section.nav2{
+	height: 100%;
+	height: 100%;
+	background:#fff;
+	height: 550px;
+}
+.nav2 div.header{
+	width: 100%;
+	height: 30px;
+	padding:20px;
+	position:relative;
+
+}
+.nav2 div.header span.back{
+	position:absolute;
+	left:10px;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	font-size:30px;
+	top:17px;
+	/*background:url(img/nav2/phoneSprite.png) no-repeat;
+	background-position:0 -25px;*/
+}
+.nav2 div.header p.header{
+	width: 100%;
+	height: 40px;
+	line-height: 35px;
+	color:#333;
+	text-align:center;
+	font-size:16px;
+	text-indent:-40px;
+}
+.nav2 div.header a img{
+  position:absolute;
+  right:60px;
+  top:25px;
+  width: 30px;
+  height: 30px;
+}
+section.nav2 img.top{
+	width: 100%;
+	height: 150px;
+}
+section.nav2 div.product img.title{
+ width: 100%;
+ height: 80px;
+
+}
+section.nav2 div.product a div{
+ float:left;
+ width: 50%;
+ margin-bottom:20px;
+ background:#fff;
+}
+section.nav2 div.product a div img{
+	width: 100%;
+	display:block;
+}
+section.nav2 div.product a div p{
+	color:#333;
+	width: 80%;
+	font-size:12px;
+	line-height: 12px;
+	text-align:center;
+}
+section.nav2 div.product a div span{
+	display:block;
+	margin:0 auto;
+	color:red;
+	font-size:12px;
+	margin-bottom:12px;
+	margin-top:8px;
+	text-align:center;
+}
+
+/*奶粉第一个的详情页的样式*/
+.milk1 div.header{
+	width: 100%;
+	height: 40px;
+	overflow:hidden;
+	background:#f60;
+}
+.milk1 div.header span{
+ float:left;
+ width: 30px;
+ height: 40px;
+ line-height: 40px;
+ font-size:30px;
+ margin-right:20px;
+ color:#fff;
+
+}
+.milk1 div.header input{
+	width: 80%;
+	float:left;
+	height: 30px;
+	color:#fff;
+    font-size:14px;
+    line-height: 30px;
+    margin:5px 0;
+    border:none;
+    outline:none;
+   background:#FF8C3C;
+   border-radius:8px;
+}
+
+.milk1 div.main ul{
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+	margin-bottom:20px;
+}
+.milk1 div.main ul li{
+	float:left;
+}
+.milk1 div.main ul li img{
+	height: 300px;
+	height: 100%;
+}
+.milk1 div.main p.price{
+	width: 100%;
+	height: 40px;
+	border-bottom:1px solid #ccc;
+	color:red;
+	text-align:left;
+	font-size:20px;
+	background:#fff;
+	line-height: 40px;
+}
+.milk1 div.main p.title{
+	width: 100%;
+	height: 50px;
+	font-size:20px;
+	background:#fff;
+	padding-bottom:20px;
+
+}
+.milk1 div.main p.subtitle{
+	height: 80px;
+	width: 100%;
+	background:#fff;
+	font-size:14px;
+	line-height: 20px;
+	color:#666;
+}
+.milk1 div.main span.setoff{
+	width: 100%;
+	height: 30px;
+	font-size:12px;
+	line-height: 30px;
+	text-align:right;
+	background:#D2D2D2;
+	display:block;
+	color:#666;
+	margin-bottom:10px;
+}
+.milk1 div.main div.size{
+  width: 100%;
+  height: 100px;
+  background:#fff;
+}
+.milk1 div.main div.size span.title{
+ width: 100%;
+ display:block;
+ height: 30px;
+ color:#666;
+ line-height: 30px;
+ text-indent:10px;
+ margin-bottom:10px;
+}
+.milk1 div.main div.size span.weight{
+	display:block;
+	width: 60px;
+	height: 40px;
+	background:#f60;
+	color:#fff;
+	border-radius:10px;
+	font-size:18px;
+	line-height: 40px;
+	text-align:center;
+	margin-bottom:20px;
+}
+/*.milk1 div.main div.evaluate{
+	width: 100%;
+	height: 40px;
+	font-size:20px;
+
+}*/
+.milk1 div.evaluate p{
+	width: 100%;
+	height: 40px;
+	font-size:16px;
+	color:#000;
+	line-height: 40px;
+	background:#fff;
+	text-align:left;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	position:relative;
+}
+
+.milk1 div.evaluate p span{
+ position:absolute;
+ right:30px;
+ font-size:25px;
+}
+.milk1 div.evaluate div.pic{
+	width: 100%;
+	height: 40px;
+	background:#fff;
+	border-bottom:1px solid #ccc;
+
+}
+
+.milk1 div.evaluate div.pic img{
+	width: 35px;
+	height: 35px;
+}
+.milk1 div.evaluate span.first{
+	display:block;
+	height: 30px;
+	width: 100%;
+	color:#666;
+	font-size:16px;
+	line-height: 30px;
+	background:#fff;
+	margin-bottom:10px;
+}
+.milk1 div.evaluate .picture{
+	width: 100%;
+	height: 100px;
+}	
+.milk1 div.detail{
+	background:#fff;
+}
+.milk1 div.detail p{
+  border-bottom:1px solid #ccc;
+  width: 100%;
+  height: 40px;
+  font-size:16px;
+  line-height: 40px;
+  text-indent:10px;
+
+}
+.milk1 div.detail span{
+	display:block;
+	font-size:12px;
+	line-height: 16px;
+	margin-left:10px;
+}
+.milk1 div.detail img.little{
+	width: 100%;
+	height: 180px;
+}
+.milk1 div.detail img.big{
+	width: 100%;
+	height: 2000px;
+	border-bottom:1px solid #ccc;
+}
+.milk1 div.contact{
+	width: 100%;
+	height: 30px;
+	background:#fff;
+	padding:10px 0;
+}
+.milk1 div.contact img{
+  width: 30px;
+  height: 30px;
+  margin-left:20px;
+  float:left;
+}
+.milk1 div.contact div {
+	float:left;
+	width: 30%;
+	height: 30px;
+
+}
+.milk1 div.contact div span{
+	border:1px solid #ccc;
+	font-size:14px;
+	color:#000;
+	float:left;
+	width: 30px;
+	height: 30px;
+	text-align:center;
+	line-height: 30px;
+}
+.milk1 div.contact div span:nth-child(2){
+	border-left:none;
+	border-right:none;
+}
+.milk1 div.contact div.buy{
+	float:right;
+	width: 40%;
+	background:#f60;
+	color:#fff;
+	margin-right:30px;
+	text-align:center;
+	line-height: 30px;
+	border-radius:5px;
+}
+
+/*分类部分的样式sort*/
+section.sort{
+	width: 100%;
+	overflow: hidden;
+}
+section.sort div.left{
+	width: 20%;
+	float:left;
+
+}
+section.sort div.left ul li{
+	width: 100%;
+	height: 50px;
+	font-size:12px;
+	line-height: 50px;
+    text-align:center;
+}
+section.sort div.right{
+	float:left;
+	width: 70%;
+	background:#fff;
+	margin-left:10px;
+}
+section.sort div.right ul{
+	width: 100%;
+	overflow:hidden;
+}
+section.sort div.right ul p.title{
+	margin-top:10px;
+	height: 20px;
+	width: 100%;
+	font-size:14px;
+	text-align:left;
+	line-height: 20px;
+	color:#666;
+}
+section.sort div.right div.every{
+	width: 30%;
+	float:left;
+}
+section.sort div.right ul div.every li{
+	width:100%;
+}
+section.sort div.right ul div.every li img{
+	display:block;
+	width: 80%;
+	height: 60px;
+	margin:0 auto;
+}
+section.sort div.right ul div.every p.subtitle{
+	width:100%;
+	height: 15px;
+	font-size:8px;
+	line-height: 15px;
+	color:#666;
+	text-align:center;
+
+}

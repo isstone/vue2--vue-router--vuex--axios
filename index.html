@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>母婴海淘</title>
+</head>
+<body>
+<!-- 容器元素 -->
+<div id="app">
+    <div v-show="showSearch" class="search">
+        <img src="img/logo.png" alt="">
+        <input type="text" placeholder="请搜索" @keydown="search($event)">
+    </div>
+    <div class="footer" v-show="showFooter">
+        <ul>
+            <li v-for="item in types">
+                <a v-bind:href="'#'+item.type+'/'+item.id">
+                    <img v-bind:src="'img/footer/'+item.img" alt=""><span>{{item.title}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <component v-bind:is="view" :params="params"></component>
+</div>
+<!-- 定义组件 -->
+<!-- home组件 -->
+<script type="text/template" id="tpl_home">
+    <section class="home">
+        <div class="header">
+            <ul class="carousel clearFix">
+                <li v-for="item in carousel"><a v-bind:href="'#carousel'+item.id"><img
+                        v-bind:src="'img/home/home-carousel/'+item.img" alt=""></a></li>
+            </ul>
+            <div class="warn">
+                <span class="warn">公告</span>
+                <a href="">
+                    <span>谨防诈骗的安全提醒</span>
+                </a>
+            </div>
+            <ul class="nav">
+                <li v-for="item in nav">
+                    <a v-bind:href="'#nav'+item.id "><img v-bind:src="'img/home/home-nav/'+item.img" alt=""></a>
+                    <p>{{item.title}}</p>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="register">
+            <li v-for="item in register"><a v-bind:href="'#register/'+item.id"><img
+                    v-bind:src="'img/home/home-rigester/'+item.img" alt=""></a></li>
+        </ul>
+
+        <div class="fortoday">
+            <p>今日专场</p>
+            <ul>
+                <li v-for="item in filterByParams(fortoday,params)">
+                    <a v-bind:href="'#fortoday/'+item.id">
+                        <img v-bind:src="'img/home/home-fortoday/'+item.img" alt="">
+                        <div>
+                            <p class="title">{{item.title}}</p>
+                            <span class='price'>{{item.price}}</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="hotsales">
+            <p>精选爆款</p>
+            <ul>
+                <li v-for="item in filterByParams(hotsales,params)">
+                    <a v-bind:href="'#hotsales/'+item.id">
+                        <img v-bind:src="'img/home/home-hotsales/'+item.img" alt="">
+                        <div>
+                            <p>{{item.title}}</p>
+                            <span>{{item.price}}</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="todaysales">
+            <p class="title">今日特卖</p>
+            <ul v-for="item in filterByParams(todaysales,params)">
+                <a v-bind:href="'#todaysales/'+item.id">
+                    <li><img v-bind:src="'img/home/home-todaysales/'+item.img1" alt=""></li>
+                    <li><img v-bind:src="'img/home/home-todaysales/'+item.img2" alt=""></li>
+                    <li><img v-bind:src="'img/home/home-todaysales/'+item.img3" alt=""></li>
+                    <div class="title">
+                        <img v-bind:src="'img/home/home-todaysales/'+item.img4" alt="">
+                        <p>{{item.title}}<span><br>{{item.sales}}</span></p>
+                        <div><img v-bind:src="'img/home/home-todaysales/'+item.img5" alt=""><span>{{item.price}}</span>
+                        </div>
+                    </div>
+                </a>
+            </ul>
+        </div>
+    </section>
+</script>
+<!-- 定义购物车组件 -->
+<script type="text/template" id="tpl_cart">
+    <section class="cart">
+        <div class="top">
+            <a v-bind:href="'#home'+123"><span class="go-back">&lt;</span></a>
+            <p class="title">购物车</p>
+            <p class="set">编辑</p>
+        </div>
+        <div v-show="shownothing" class="buynothing">
+            <img src="img/cart/img_null.png" alt="">
+            <p class="buy">您的购物车空空如也~</p>
+            <a class="tip" v-bind:href="'#home'+123">
+                <div class="tip">去首页看看</div>
+            </a>
+        </div>
+        <div v-show="showList" class="buylist">
+            <div class="up">
+                <input type="radio">
+                <p>母婴之家商城</p>
+            </div>
+            <div class="down" v-for="item in goodsList">
+                <input type="radio">
+                <a href="#home">
+                    <img src="img/cart/1.jpg" alt="">
+                </a>
+                <div>
+                    <a href="#home">
+                        <p class="title">{{item.name}}</p>
+                    </a>
+                    <span class="price">{{item.price}}</span>
+                    <div class="number">
+                        <span>-</span>
+                        <span>{{item.num}}</span>
+                        <span>+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="allcount">
+                <span>小计:</span>
+                <span class="allprice">{{totalPrice}}</span>
+            </div>
+        </div>
+    </section>
+</script>
+
+<!-- 定义个人账户界面 -->
+<script type="text/template" id="tpl_account">
+    <section class="account">
+        <div class="title">
+            <span v-on:click="goHome" class="go-back">&lt;</span>
+            <p class="title">登录</p>
+        </div>
+        <div class="regist">
+            <input type="text" placeholder="请输入邮箱或手机号">
+            <input type="text" placeholder="请输入密码(6-20位数字、字母、字符)">
+            <a class="forget" v-bind:href="'#forgetPassword'"><span>忘记密码</span></a>
+            <input class=" button" type="submit" value="登录">
+            <a class="newjion" v-bind:href="'#newJoin'"><span>新用户注册</span></a>
+            <a class="phonecheck" v-bind:href="'#phonecheck'"><span>手机验证码登陆</span></a>
+        </div>
+    </section>
+</script>
+
+<!-- 忘记密码组件模板 -->
+<script type="text/template" id="tpl_forgetPassword">
+    <section class="forgetPassword">
+        <div class="reset">
+            <span v-on:click="goBack">&lt;</span>
+            <p class="title">重置密码</p>
+        </div>
+        <input type="text" placeholder="请输入手机号码">
+        <input type="submit" value="发送验证码">
+    </section>
+</script>
+<!-- 新用户注册组件 -->
+<script type="text/template" id="tpl_newJoin">
+    <section class="newJoin">
+        <div>
+            <span v-on:click="goPrev">&lt;</span>
+            <p class="title">注册</p>
+        </div>
+        <input placeholder="请输入手机号码"></input>
+        <input type="submit" value="发送验证码"></input>
+        <input class="agree" type="radio"><span class="agree">同意《母婴之家注册协议》</span>
+    </section>
+</script>
+
+<!-- 手机验证登录 -->
+<script type="text/tempalte" id="tpl_phoneCheck">
+  <section class="phoneCheck">
+    <div class="check">
+      <span v-on:click="goBack">&lt;</span>
+      <p class="title">重置密码</p>
+    </div>
+    <input type="text" placeholder="请输入手机号码">
+    <input type="submit" value="发送验证码">
+</section>
+
+</script>
+<!-- 引入新妈专享部分的模板 -->
+<script type="text/template" id="tpl_nav1">
+    <section class="newsalery">
+        <div class="header">
+            <span v-on:click="goBack">&lt;</span>
+            <p class="title">新人福利</p>
+        </div>
+        <img class="center1" src="img/nav1/1.jpg" alt="">
+        <img class="center2" src="img/nav1/2.jpg" alt="">
+        <div class="footer">
+            <div class="regist">
+                <img src="img/nav1/icon_signup.png" alt="">
+                <a v-bind:href="'#newJoin'">
+                    <span>注册</span>
+                </a>
+            </div>
+            <div class="login">
+                <img src="img/nav1/icon_login.png" alt="">
+                <a v-bind:href="'#account'">
+                    <span>登录</span>
+                </a>
+            </div>
+        </div>
+        <span class="toTop"></span>
+    </section>
+</script>
+<!-- 奶粉组件模板 -->
+<script type="text/template" id="tpl_nav2">
+    <section class="nav2">
+        <div class="header">
+            <span v-on:click="goback" class="back">&lt;</span>
+            <p class="header">奶粉精选</p>
+            <a href=""><img src="img/nav2/cart.png" alt=""></a>
+        </div>
+        <img class="top" src="img/nav2/1.jpg" alt="">
+        <img class="top" src="img/nav2/2.jpg" alt="">
+        <img class="top" src="img/nav2/3.jpg" alt="">
+        <div class="product" v-for="item in milk">
+            <img class="title" v-bind:src="'img/nav2/'+item.img1" alt="">
+            <a v-bind:href="'#milk'+item.id1">
+                <div>
+                    <img v-bind:src="'img/nav2/'+item.img2" alt="">
+                    <p class="title">{{item.title1}}</p>
+                    <span class="price">{{item.price1}}</span>
+                    <span class="subtitle">{{item.subtitle1}}</span>
+                </div>
+            </a>
+            <a v-bind:href="'#milk'+item.id2">
+                <div>
+                    <img v-bind:src="'img/nav2/'+item.img3" alt="">
+                    <p class="title">{{item.title2}}</p>
+                    <span class="price">{{item.price2}}</span>
+                    <span class="subtitle">{{item.subtitle2}}</span>
+                </div>
+            </a>
+            <a v-bind:href="'#milk'+item.id3">
+                <div>
+                    <img v-bind:src="'img/nav2/'+item.img4" alt="">
+                    <p class="title">{{item.title3}}</p>
+                    <span class="price">{{item.price3}}</span>
+                    <span class="subtitle">{{item.subtitle3}}</span>
+                </div>
+            </a>
+            <a v-bind:href="'#milk'+item.id4">
+                <div>
+                    <img v-bind:src="'img/nav2/'+item.img5" alt="">
+                    <p class="title">{{item.title4}}</p>
+                    <span class="price">{{item.price4}}</span>
+                    <span class="subtitle">{{item.subtitle4}}</span>
+                </div>
+            </a>
+        </div>
+    </section>
+</script>
+
+<!-- 奶粉详情页第一页图的模板 -->
+<script type="text/template" id="tpl_milk1">
+    <section class="milk1">
+        <div class="header">
+            <span v-on:click="goback">&lt;</span>
+            <input type="text" placeholder="搜索母婴产品">
+        </div>
+        <div class="main">
+            <ul>
+                <li><img src="img/milk1/1.jpg" alt=""></li>
+                <li><img src="img/milk1/2.jpg" alt=""></li>
+                <li><img src="img/milk1/3.jpg" alt=""></li>
+                <li><img src="img/milk1/4.jpg" alt=""></li>
+            </ul>
+            <p class="price">¥188.00</p>
+            <p class="title">Nutrilon诺贝能1段婴儿配方奶粉900g（荷兰原装进口）</p>
+            <p class="subtitle">诺优能是荷兰婴幼儿奶粉品牌，沿承NUTRICIA纽迪希亚科研中心在婴幼儿营养领域100多年的研究成果。 应用100%乳糖配方设计，为宝宝提供专业早期营养</p>
+            <span class="setoff">母婴之家发货</span>
+            <div class="size">
+                <span class="title">规格</span>
+                <span class="weight">900g</span></div>
+        </div>
+        <div class="evaluate">
+            <p>其他妈妈怎么说100%好评(5717人) <span>&gt;</span></p>
+            <div class="pic"><img src="img/milk1/c-photo.png" alt=""></div>
+            <span class="first">一如既往的支持！好评！</span>
+            <img src="img/milk1/new_customer.png" alt="" class="picture">
+        </div>
+        <div class="detail">
+            <p class="title">商品参数和使用指南</p>
+            <span>商品名称：Aptamil爱宝美1段婴儿配方奶粉800g（德国原装进口）</span>
+            <span>奶粉阶段：1段</span>
+            <span>适用年龄：0-6个月</span>
+            <span>规格：800g</span>
+            <span>产地：德国</span>
+            <span>奶粉类型：婴儿奶粉</span>
+            <img class="little" src="img/milk1/6.jpg" alt="">
+            <img class="big" src="img/milk1/7.jpg" alt="">
+        </div>
+        <div class="contact">
+            <img src="img/milk1/c_service.png" alt="">
+            <div>
+                <span v-on:click="numberCutdown">-</span>
+                <span id="num">{{num}}</span>
+                <span v-on:click="numberAdd">+</span>
+            </div>
+            <div class="buy" @click="goToCart()">加入购物车</div>
+        </div>
+    </section>
+</script>
+
+<!-- 分类页的模板 -->
+<script type="text/template" id="tpl_sort">
+    <section class="sort">
+        <div class="left">
+            <ul>
+                <li>妈妈专区</li>
+                <li>奶粉辅食</li>
+                <li>尿裤湿巾</li>
+                <li>哺育喂养</li>
+                <li>洗护用品</li>
+                <li>宝宝服饰</li>
+                <li>童车汽座</li>
+                <li>学习玩具</li>
+                <li>床椅寝具</li>
+                <li>收纳外出</li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul v-for="item in sort">
+                <p class="title">{{item.title}}</p>
+                <div class="every">
+                    <li>
+                        <img v-bind:src="'img/sort/'+item.img1" alt="">
+                    </li>
+                    <p class="subtitle">{{item.subtitle1}}</p>
+                </div>
+                <div class="every">
+                    <li><img v-bind:src="'img/sort/'+item.img2" alt=""></li>
+                    <p class="subtitle">{{item.subtitle2}}</p>
+                </div>
+                <div class="every">
+                    <li><img v-bind:src="'img/sort/'+item.img3" alt=""></li>
+                    <p class="subtitle">{{item.subtitle3}}</p>
+                </div>
+                <div class="every">
+                    <li><img v-bind:src="'img/sort/'+item.img4" alt=""></li>
+                    <p class="subtitle">{{item.subtitle4}}</p>
+                </div>
+                <div class="every">
+                    <li><img v-bind:src="'img/sort/'+item.img5" alt=""></li>
+                    <p class="subtitle">{{item.subtitle5}}</p>
+                </div>
+                <div class="every">
+                    <li><img v-bind:src="'img/sort/'+item.img6" alt=""></li>
+                    <p class="subtitle">{{item.subtitle6}}</p>
+                </div>
+            </ul>
+        </div>
+    </section>
+</script>
+<!-- <script src="js/newmather.js"></script> -->
+<!-- 引入脚本文件 -->
+<script src='js/vue2.js'></script>
+<script src="js/index.js"></script>
+</body>
+</html>
